@@ -1,0 +1,17 @@
+{
+  "name": "rsjx-stream-examples",
+  "version": "1.0.0",
+  "description": "A series of examples using RXJS.",
+  "dependencies": {
+    "rxjs-es": "^5.0.0-beta.8"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0"
+  },
+  "scripts": {
+    "build-01": "./node_modules/.bin/babel 01-simple-debt-calculator/src -d 01-simple-debt-calculator/dist"
+  },
+  "author": "Carl Willimott <carlwillimott@googlemail.com>",
+  "license": "Apache 2.0"
+}
