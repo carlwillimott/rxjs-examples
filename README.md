@@ -9,3 +9,5 @@ performs a simple calculation within combine latest.
 <p align="center">
   <img src="01-simple-debt-calculator/screenshot.png" alt="Simple debt calculator" width="292" height="86"/>
 </p>
+
+## Example 02 - Basic autocomplete
