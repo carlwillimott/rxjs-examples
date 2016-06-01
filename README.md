@@ -11,4 +11,9 @@ performs a simple calculation within combine latest.
 </p>
 
 ## Example 02 - Basic autocomplete
-Coming soon...
+Matching results are returned each time a new character is added to the text
+inout field.
+
+<p align="center">
+  <img src="02-basic-autocomplete/screenshot.png" alt="Basic autocomplete" width="309" height="138"/>
+</p>
