@@ -19,5 +19,5 @@ Rx.Observable.combineLatest(
   amount$,
   rate$,
   years$,
-  (amount, rate, years) => (parseInt(amount) + (amount / 100 * rate) * years)
-).subscribe((x) => result.innerHTML = `Total debt: £${x}`);
+  (amount, rate, years)=> (parseInt(amount) + (amount / 100 * rate) * years)
+).subscribe((x)=> result.innerHTML = `Total debt: £${x}`);
