@@ -13,6 +13,14 @@ const results = [
   {
     value: "elm",
     description: "A functional language."
+  },
+  {
+    value: "scala",
+    description: "Object-orientented meets functional."
+  },
+  {
+    value: "python",
+    description: "A dynamic programming language."
   }
 ];
 
