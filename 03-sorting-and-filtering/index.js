@@ -75,11 +75,15 @@ const order$ = Rx.Observable.fromEvent(order, 'change')
   .map((x)=> identifier('order', x.target.value))
   .startWith(identifier('order', 'a-z'));
 
+// http://stackoverflow.com/a/2901298
+const numberWithCommas = (number) =>
+  number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
 const renderResults = (result) => {
   let child = `<div>
     <div>${result.country}</div>
     <div>${result.capital}</div>
-    <div>${result.population}</div>
+    <div>${numberWithCommas(result.population)}</div>
     <div><img src="${result.flag}" /></div>
   </div>`;
   output.insertAdjacentHTML('beforeend', child);
