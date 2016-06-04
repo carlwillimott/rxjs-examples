@@ -17,3 +17,6 @@ inout field.
 <p align="center">
   <img src="02-basic-autocomplete/screenshot.png" alt="Basic autocomplete" width="309" height="138"/>
 </p>
+
+## Example 03 - Sorting and filtering
+Coming soon...

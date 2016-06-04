@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>03 Sorting and filtering</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="app">
+            <form role="form">
+                <div class="input-group">
+                    <label for="filter">Select a continent</label>
+                    <select id="filter" name="filter">
+                        <option value="">- Select -</option>
+                        <option value="europe">Europe</option>
+                        <option value="north-america">North America</option>
+                        <option value="africa">Africa</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="order">Select sort option</label>
+                    <select id="order" name="order">
+                      <option value="a-z">A-Z</option>
+                      <option value="z-a">Z-A</option>
+                      <option value="large">Largest Population</option>
+                      <option value="small">Smallest Population</option>
+                    </select>
+                </div>
+                <p>Displaying x of x countries.</p>
+                <div id="output"></div>
+            </form>
+        </div>
+        <script type="text/javascript" src="https://npmcdn.com/@reactivex/rxjs/dist/global/Rx.umd.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>
