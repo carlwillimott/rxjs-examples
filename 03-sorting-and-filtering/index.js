@@ -62,8 +62,6 @@ const countries = [
   }
 ];
 
-const countries$ = Rx.Observable.from(countries);
-
 const identifier = (type, value)=> ({type, value});
 
 const checkCriteria = (options, country)=> (
@@ -87,9 +85,36 @@ const renderResults = (result) => {
   output.insertAdjacentHTML('beforeend', child);
 };
 
+// http://stackoverflow.com/a/8175221
+function sortByKey(array, key) {
+    return array.sort(function(a, b) {
+        var x = a[key]; var y = b[key];
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+}
+
+const sortCountry = (order, countries) => {
+  switch(order) {
+    case 'a-z':
+      return sortByKey(countries, 'country');
+    case 'z-a':
+      return sortByKey(countries, 'country').reverse();
+    case 'large':
+      return sortByKey(countries, 'population').reverse();
+    case 'small':
+      return sortByKey(countries, 'population');
+    default:
+      return countries;
+  }
+}
+
 const filterOrder = (options, countries)=> {
-  countries.filter((country)=> checkCriteria(options, country))
-    .subscribe((country)=> renderResults(country));
+
+  let sorted = sortCountry(options.order, countries);
+  let countres$ = Rx.Observable.from(sorted);
+
+  countres$.filter((country)=> checkCriteria(options, country))
+  .subscribe((country)=> renderResults(country));
 };
 
 const countriesFilterOrder$ = Rx.Observable.combineLatest(
@@ -97,5 +122,5 @@ const countriesFilterOrder$ = Rx.Observable.combineLatest(
   order$,
   (filter, order)=> ({filter: filter.value, order: order.value}))
   .do((x)=> output.innerHTML = "")
-  .map((x)=> filterOrder(x, countries$))
+  .map((x)=> filterOrder(x, countries))
   .subscribe();
