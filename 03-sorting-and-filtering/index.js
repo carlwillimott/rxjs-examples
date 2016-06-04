@@ -1,7 +1,9 @@
 const filter = document.querySelector('#filter');
 const order = document.querySelector('#order');
 
-const = countries = [
+const output = document.querySelector('#output');
+
+const countries = [
   {
     country: "United Kingdom",
     continent: "europe",
@@ -57,18 +59,43 @@ const = countries = [
     flag: "flags/1465051555_South-Korea_flat.png",
     capital: "Seoul",
     population: 50220000
-  },
+  }
 ];
 
+const countries$ = Rx.Observable.from(countries);
+
+const identifier = (type, value)=> ({type, value});
+
+const checkCriteria = (options, country)=> (
+  country.continent === options.filter
+);
+
 const filter$ = Rx.Observable.fromEvent(filter, 'change')
-  .map((x)=> x.target.value)
-  .subscribe((x)=> console.log(x));
+  .map((x)=> identifier('filter', x.target.value));
 
 const order$ = Rx.Observable.fromEvent(order, 'change')
-  .map((x)=> x.target.value)
-  .startWith('a-z')
-  .subscribe((x)=> console.log(x));
+  .map((x)=> identifier('order', x.target.value))
+  .startWith(identifier('order', 'a-z'));
 
-const countries$ = Rx.Observable.of(countries);
+const renderResults = (result) => {
+  let child = `<div>
+    <div>${result.country}</div>
+    <div>${result.capital}</div>
+    <div>${result.population}</div>
+    <div><img src="${result.flag}" /></div>
+  </div>`;
+  output.insertAdjacentHTML('beforeend', child);
+};
 
-const countriesFilterOrder$ = null;
+const filterOrder = (options, countries)=> {
+  countries.filter((country)=> checkCriteria(options, country))
+    .subscribe((country)=> renderResults(country));
+};
+
+const countriesFilterOrder$ = Rx.Observable.combineLatest(
+  filter$,
+  order$,
+  (filter, order)=> ({filter: filter.value, order: order.value}))
+  .do((x)=> output.innerHTML = "")
+  .map((x)=> filterOrder(x, countries$))
+  .subscribe();
