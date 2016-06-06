@@ -1,0 +1,35 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+@import "partials/one";
+@import "partials/two";
+@import "partials/three";
+
+body {
+    font-family: "Arial";
+}
+
+#app {
+    margin: 50px;
+}
+
+.input-group {
+
+}
+
+input {
+    width: 200px;
+    margin: 10px 0;
+    padding: 5px 10px;
+    border: 1px solid gray;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9em;
+}

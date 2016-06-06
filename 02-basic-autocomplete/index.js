@@ -31,9 +31,9 @@ const searchNotEmpty = (value)=> value.length > 0;
 const patternMatch = (search, result)=> result.value.indexOf(search) > -1;
 
 const renderResults = (result)=> {
-  let child = `<div>
-    <div>${result.value}</div>
-    <div><small>${result.description}</small></div>
+  let child = `<div class="row">
+    <div class="title">${result.value}</div>
+    <div class="descirption">${result.description}</div>
   </div>`;
   output.insertAdjacentHTML('beforeend', child);
 };
