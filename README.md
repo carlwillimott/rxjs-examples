@@ -22,5 +22,5 @@ Results are sorted and filtered upon selection of a value from each select eleme
 We actually apply the sort to the object before converting it to a stream to limit the number of items in the observable.
 
 <p align="center">
-  <img src="03-sorting-and-filtering/screenshot.png" alt="Sorting and filtering" width="687" height="482"/>
+  <img src="03-sorting-and-filtering/screenshot.png" alt="Sorting and filtering" width="684" height="480"/>
 </p>
