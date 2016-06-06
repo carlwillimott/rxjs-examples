@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>04 Weather explorer</title>
+        <meta charset="UTF-8">
+        <link href="../css/screen.css" rel=stylesheet />
+    </head>
+    <body>
+        <div id="app" class="four">
+            <form role="form">
+				<div class="input-group">
+                    <label for="location">Please select a location</label>
+                    <input type="text" name="location" id="location" />
+                </div>
+                <div class="input-group">
+					<label for="range">Please select a date range</label>
+                    <input type="range" name="range" id="range" min="1" max="5" value="3" />
+					<p id="feedback"></p>
+                </div>
+                <div id="output"></div>
+            </form>
+        </div>
+        <script type="text/javascript" src="https://npmcdn.com/@reactivex/rxjs/dist/global/Rx.umd.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>
