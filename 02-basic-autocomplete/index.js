@@ -21,6 +21,18 @@ const results = [
   {
     value: "python",
     description: "A dynamic programming language."
+  },
+  {
+    value: "c",
+    description: "A general-purpose, imperative computer programming language."
+  },
+  {
+    value: "c++",
+    description: "Provides facilities for low-level memory manipulation."
+  },
+  {
+    value: "ruby",
+    description: "a dynamic, reflective, object-oriented, programming language."
   }
 ];
 
@@ -33,7 +45,7 @@ const patternMatch = (search, result)=> result.value.indexOf(search) > -1;
 const renderResults = (result)=> {
   let child = `<div class="row">
     <div class="title">${result.value}</div>
-    <div class="descirption">${result.description}</div>
+    <div class="description">${result.description}</div>
   </div>`;
   output.insertAdjacentHTML('beforeend', child);
 };

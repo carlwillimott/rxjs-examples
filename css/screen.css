@@ -77,7 +77,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   border: 1px solid black;
   padding: 10px;
   border: 1px solid gray;
-  width: 300px;
+  width: 400px;
   margin: 0 0 2px 0;
 }
 /* line 11, ../scss/partials/_two.scss */
@@ -87,7 +87,33 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 16, ../scss/partials/_two.scss */
 .two .description {
+  font-size: 0.75em;
+  font-style: italic;
+}
+
+/* line 7, ../scss/partials/_three.scss */
+.three .title {
+  font-size: 1.25em;
+  margin: 0 0 4px 0;
+}
+/* line 12, ../scss/partials/_three.scss */
+.three .capital {
   font-size: 0.9em;
+  margin: 2px 0;
+}
+/* line 17, ../scss/partials/_three.scss */
+.three .population {
+  font-size: 0.9em;
+  margin: 2px 0;
+}
+/* line 26, ../scss/partials/_three.scss */
+.three .row {
+  border: 1px solid black;
+  padding: 10px;
+  border: 1px solid gray;
+  width: 300px;
+  margin: 0 5px 5px  0;
+  display: inline-block;
 }
 
 /* line 12, ../scss/screen.scss */
@@ -100,15 +126,21 @@ body {
   margin: 50px;
 }
 
+/* line 20, ../scss/screen.scss */
+.input-group {
+  margin: 10px 0;
+}
+
 /* line 24, ../scss/screen.scss */
-input {
+input, select {
   width: 200px;
   margin: 10px 0;
   padding: 5px 10px;
   border: 1px solid gray;
+  background: none;
 }
 
-/* line 31, ../scss/screen.scss */
+/* line 32, ../scss/screen.scss */
 label {
   display: block;
   font-weight: bold;

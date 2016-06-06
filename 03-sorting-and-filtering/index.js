@@ -80,11 +80,11 @@ const numberWithCommas = (number) =>
   number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const renderResults = (result) => {
-  let child = `<div>
-    <div>${result.country}</div>
-    <div>${result.capital}</div>
-    <div>${numberWithCommas(result.population)}</div>
-    <div><img src="${result.flag}" /></div>
+  let child = `<div class="row">
+    <div class="title">${result.country}</div>
+    <div class="capital">Capital: ${result.capital}</div>
+    <div class="population">Population:${numberWithCommas(result.population)}</div>
+    <div class="flag"><img src="${result.flag}" /></div>
   </div>`;
   output.insertAdjacentHTML('beforeend', child);
 };
@@ -118,7 +118,7 @@ const filterOrder = (options, countries)=> {
   let countres$ = Rx.Observable.from(sorted);
 
   countres$.filter((country)=> checkCriteria(options, country))
-  .subscribe((country)=> renderResults(country));
+    .subscribe((country)=> renderResults(country));
 };
 
 const countriesFilterOrder$ = Rx.Observable.combineLatest(
