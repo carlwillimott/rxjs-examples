@@ -83,7 +83,7 @@ const renderResults = (result) => {
   let child = `<div class="row">
     <div class="title">${result.country}</div>
     <div class="capital">Capital: ${result.capital}</div>
-    <div class="population">Population:${numberWithCommas(result.population)}</div>
+    <div class="population">Population: ${numberWithCommas(result.population)}</div>
     <div class="flag"><img src="${result.flag}" /></div>
   </div>`;
   output.insertAdjacentHTML('beforeend', child);
