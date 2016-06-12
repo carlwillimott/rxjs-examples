@@ -3,21 +3,25 @@ const rate = document.querySelector('#rate');
 const years = document.querySelector('#years');
 const result = document.querySelector('#result');
 
-const amount$ = Rx.Observable.fromEvent(amount, 'input')
-  .map(event => event.target.value)
-  .startWith(amount.value);
+// Helper function to get a stream of values from each input.
+const inputStreamGenerator = (element) => {
+  return Rx.Observable.fromEvent(element, 'input')
+    .map(event => event.target.value)
+    .startWith(element.value);
+};
 
-const rate$ = Rx.Observable.fromEvent(rate, 'input')
-  .map(event => event.target.value)
-  .startWith(rate.value);
+const amount$ = inputStreamGenerator(amount);
+const rate$ = inputStreamGenerator(rate);
+const years$ = inputStreamGenerator(years);
 
-const years$ = Rx.Observable.fromEvent(years, 'input')
-  .map(event => event.target.value)
-  .startWith(years.value);
+const calculateDebt = (amount, rate, years) => {
+  return parseInt(amount) + (amount / 100 * rate) * years
+};
 
+// Merge the latest values from each stream and update the output.
 Rx.Observable.combineLatest(
   amount$,
   rate$,
   years$,
-  (amount, rate, years)=> (parseInt(amount) + (amount / 100 * rate) * years)
+  (amount, rate, years) => calculateDebt(amount, rate, years)
 ).subscribe((x)=> result.innerHTML = `Total debt: £${x}`);
