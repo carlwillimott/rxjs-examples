@@ -14,8 +14,8 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "build-01": "webpack-dev-server --content-base src/01-simple-debt-calculator",
-    "build-02": "webpack-dev-server --content-base src/02-basic-autocomplete"
+    "build-01": "webpack-dev-server ./src/01-simple-debt-calculator/index.js --content-base src/01-simple-debt-calculator",
+    "build-02": "webpack-dev-server ./src/02-basic-autocomplete/index.js --content-base src/02-basic-autocomplete"
   },
   "dependencies": {
     "babel-runtime": "^6.9.2"
