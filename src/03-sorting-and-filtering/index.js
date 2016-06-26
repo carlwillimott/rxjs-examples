@@ -1,3 +1,5 @@
+import Rx from 'rxjs/Rx';
+
 const filter = document.querySelector('#filter');
 const order = document.querySelector('#order');
 

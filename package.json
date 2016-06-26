@@ -8,6 +8,7 @@
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "jasmine": "^2.4.1",
     "rxjs": "^5.0.0-beta.9",
     "webpack": "^1.13.1",
@@ -15,7 +16,8 @@
   },
   "scripts": {
     "build-01": "webpack-dev-server ./src/01-simple-debt-calculator/index.js --content-base src/01-simple-debt-calculator",
-    "build-02": "webpack-dev-server ./src/02-basic-autocomplete/index.js --content-base src/02-basic-autocomplete"
+    "build-02": "webpack-dev-server ./src/02-basic-autocomplete/index.js --content-base src/02-basic-autocomplete",
+    "build-03": "webpack-dev-server ./src/03-sorting-and-filtering/index.js --content-base src/03-sorting-and-filtering"
   },
   "dependencies": {
     "babel-runtime": "^6.9.2"
