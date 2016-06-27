@@ -1,6 +1,6 @@
 # RXJS Examples
 
-This repo contains a series of examples using RXJS.
+This repo contains a series of examples using RXJS. You will need to run `npm install` to get the latest packages. Unit tests can be run using `npm run test`.
 
 ## Example 01 - Simple debt calculator
 We create a stream for each of the three inputs and use `combineLatest` to get the most recent values for the calculation.
