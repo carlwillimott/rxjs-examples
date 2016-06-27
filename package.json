@@ -15,6 +15,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
+    "test": "babel-node --presets es2015 run.js",
     "build-01": "webpack-dev-server ./src/01-simple-debt-calculator/index.js --content-base src/01-simple-debt-calculator",
     "build-02": "webpack-dev-server ./src/02-basic-autocomplete/index.js --content-base src/02-basic-autocomplete",
     "build-03": "webpack-dev-server ./src/03-sorting-and-filtering/index.js --content-base src/03-sorting-and-filtering"
