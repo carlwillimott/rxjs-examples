@@ -2,6 +2,7 @@
 	"spec_dir": "src",
 	"spec_files": [
 		"01-simple-debt-calculator/test.js",
-		"02-basic-autocomplete/test.js"
+		"02-basic-autocomplete/test.js",
+		"03-sorting-and-filtering/test.js"
 	]
 }
